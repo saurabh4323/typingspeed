@@ -1,0 +1,242 @@
+/* Font import */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap");
+
+/* Mainbox styling */
+.mainbox {
+  padding: 40px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  /* background-color: #121212; */
+  animation: fadeIn 2s ease-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Top section */
+.topp {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.topp h1 {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 150, 1) 0%,
+    rgba(0, 204, 255, 1) 40%,
+    rgba(0, 255, 128, 1) 70%,
+    rgba(255, 255, 0, 1) 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+/* @keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 99, 71, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 99, 71, 1), 0 0 30px rgba(255, 99, 71, 0.8);
+  }
+} */
+
+select {
+  background: rgb(4, 104, 129);
+  border: none;
+  margin-left: 30px;
+  padding: 5px;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-family: "Source Code Pro", monospace;
+}
+
+select:hover {
+  transform: scale(1.05);
+}
+
+/* Middle section */
+.midd {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ques {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.boxq p {
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.boxq h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #f39c12;
+}
+
+.direc button {
+  background-color: #2980b9;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.direc button:hover {
+  background-color: #3498db;
+}
+
+.time {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+/* Writing section */
+.writi {
+  width: 100%;
+  margin-top: 30px;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #2980b9;
+  background-color: #1c1c1c;
+  color: #fff;
+  height: 150px;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #3498db;
+}
+
+/* Submit button */
+.submit-btn {
+  margin-top: 20px;
+}
+
+.submit-btn button {
+  background-color: #27ae60;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn button:hover {
+  background-color: #2ecc71;
+}
+
+/* Result section */
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.result h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f39c12;
+}
+
+.result p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #fff;
+  font-style: italic;
+}
+
+.result p.success {
+  color: #2ecc71;
+}
+
+.result p.failure {
+  color: #e74c3c;
+}
+
+/* Floating logos */
+.floating-logos {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  animation: float 4s infinite alternate;
+}
+
+.floating-logos img {
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
