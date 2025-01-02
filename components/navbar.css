@@ -1,0 +1,60 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #0e0e10;
+  color: white;
+  border-bottom: 1px solid rgba(255, 245, 238, 0.5);
+  margin-top: -4px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .left p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+}
+
+.navbar .middle {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .middle button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #0099ff;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.navbar .middle button:hover {
+  background-color: white;
+  color: #1e3c72;
+}
+
+.navbar .right button {
+  padding: 10px 20px;
+  background-color: #0099ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.navbar .right button:hover {
+  background-color: #0066cc;
+}

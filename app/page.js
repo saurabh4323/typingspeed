@@ -4,7 +4,7 @@ export default function page() {
   return (
     <div>
       <Home></Home>
-      <Signup></Signup>
+      {/* <Signup></Signup> */}
     </div>
   );
 }
