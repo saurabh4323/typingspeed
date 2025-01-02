@@ -135,68 +135,72 @@ const Programming = () => {
   }, [timeLeft]);
 
   return (
-    <div className="mainbox">
-      <div className="topp">
-        <h1>Programming Challenges Speed Test</h1>
-        <select value={data.language} onChange={handleLanguageChange}>
-          <option value="" disabled>
-            Select a language
-          </option>
-          <option value="c++">C++</option>
-          <option value="java">Java</option>
-          <option value="python3">python3</option>
-          <option value="javascript">JavaScript</option>
-        </select>
-      </div>
+    <div className="hhs" style={{ marginTop: "40px" }}>
+      <div className="mainbox">
+        <div className="topp">
+          <h1>Programming Speed Test</h1>
+          <select value={data.language} onChange={handleLanguageChange}>
+            <option value="" disabled>
+              Select a language
+            </option>
+            <option value="c++">C++</option>
+            <option value="java">Java</option>
+            <option value="python3">python3</option>
+            <option value="javascript">JavaScript</option>
+          </select>
+        </div>
 
-      <div className="midd" style={{ backgroundColor: "#1a1a1a" }}>
-        <div className="ques" style={{ backgroundColor: "#1a1a1a" }}>
-          <div className="boxq" style={{ backgroundColor: "#1a1a1a" }}>
-            <p style={{ backgroundColor: "#1a1a1a" }}>
-              {questions[forward].question}
-            </p>
+        <div className="midd" style={{ backgroundColor: "#1a1a1a" }}>
+          <div className="ques" style={{ backgroundColor: "#1a1a1a" }}>
+            <div className="boxq" style={{ backgroundColor: "#1a1a1a" }}>
+              <p style={{ backgroundColor: "#1a1a1a" }}>
+                {questions[forward].question}
+              </p>
+              <h4 style={{ backgroundColor: "#1a1a1a" }}>
+                {questions[forward].difficulty}
+              </h4>
+            </div>
+
+            <div className="direc" style={{ backgroundColor: "#1a1a1a" }}>
+              <button onClick={forwardQuestion}>Forward</button>
+              <button onClick={startTimer} disabled={isRunning}>
+                Start
+              </button>
+              <button onClick={backwardQuestion}>Backward</button>
+            </div>
+          </div>
+
+          <div className="time" style={{ backgroundColor: "#1a1a1a" }}>
             <h4 style={{ backgroundColor: "#1a1a1a" }}>
-              {questions[forward].difficulty}
+              {formatTime(timeLeft)}
             </h4>
           </div>
-
-          <div className="direc" style={{ backgroundColor: "#1a1a1a" }}>
-            <button onClick={forwardQuestion}>Forward</button>
-            <button onClick={startTimer} disabled={isRunning}>
-              Start
-            </button>
-            <button onClick={backwardQuestion}>Backward</button>
-          </div>
         </div>
 
-        <div className="time" style={{ backgroundColor: "#1a1a1a" }}>
-          <h4 style={{ backgroundColor: "#1a1a1a" }}>{formatTime(timeLeft)}</h4>
+        <div className="writi">
+          <textarea
+            onClick={() => {
+              setIsRunning(true);
+            }}
+            value={data.code}
+            onChange={handleCodeChange}
+            placeholder="Write the answer in that time"
+          ></textarea>
         </div>
-      </div>
 
-      <div className="writi">
-        <textarea
-          onClick={() => {
-            setIsRunning(true);
-          }}
-          value={data.code}
-          onChange={handleCodeChange}
-          placeholder="Write the answer in that time"
-        ></textarea>
-      </div>
+        <div className="submit-btn">
+          <button onClick={handleSubmit}>Submit Answer</button>
+        </div>
 
-      <div className="submit-btn">
-        <button onClick={handleSubmit}>Submit Answer</button>
-      </div>
-
-      {/* Display the result */}
-      <div className="result">
-        <h3>Result:</h3>
-        <p>
-          {rreturn === questions[forward].output
-            ? "Congrats! You are correct."
-            : "Failed! No issue, try again."}
-        </p>
+        {/* Display the result */}
+        <div className="result">
+          <h3>Result:</h3>
+          <p>
+            {rreturn === questions[forward].output
+              ? "Congrats! You are correct."
+              : "Failed! No issue, try again."}
+          </p>
+        </div>
       </div>
     </div>
   );

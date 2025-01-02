@@ -28,7 +28,7 @@
 
 /* Top section */
 .topp {
-  margin-top: 30px;
+  /* margin-top: 100px; */
   display: flex;
   justify-content: space-evenly;
   width: 80%;
@@ -48,6 +48,7 @@
 }
 
 .topp h1 {
+  margin-top: 20px;
   font-size: 36px;
   font-weight: 700;
   background: linear-gradient(

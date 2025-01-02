@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 800px;
+  height: 850px;
 }
 
 .box {
@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 0px;
 }
 
 .signup h1 {
