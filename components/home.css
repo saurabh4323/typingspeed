@@ -1,0 +1,93 @@
+body{
+    background: #25252b;
+    height: 900px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.navbar{
+    background-color: #1c1c21;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0 0 30px 30px;
+    gap: 200px;
+}
+
+.navbar p{
+    font-size: 25px;
+}
+
+.navbar button{
+    font-size: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.navbar button:hover{
+    color: #1c1c21;
+    background-color: #2589ff;
+}
+
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.center{
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.center h1{
+    text-shadow: 0 0 10px #2589ff,
+                 0 0 20px #2589ff,
+                 0 0 30px #2589ff,
+                 0 0 40px #2589ff;
+    letter-spacing: 4px;             
+}
+
+.start{
+    width: 230px;
+    height: 300px;
+    font-size: 30px;
+    border: none;
+    border: 5px solid #1c1c21;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.section{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%; 
+    height: 200px;
+    margin-top: -200px;
+}
+
+.waves{
+    position: absolute;
+    height: 400px;
+}
+
