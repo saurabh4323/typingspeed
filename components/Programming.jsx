@@ -149,14 +149,18 @@ const Programming = () => {
         </select>
       </div>
 
-      <div className="midd">
-        <div className="ques">
-          <div className="boxq">
-            <p>{questions[forward].question}</p>
-            <h4>{questions[forward].difficulty}</h4>
+      <div className="midd" style={{ backgroundColor: "#1a1a1a" }}>
+        <div className="ques" style={{ backgroundColor: "#1a1a1a" }}>
+          <div className="boxq" style={{ backgroundColor: "#1a1a1a" }}>
+            <p style={{ backgroundColor: "#1a1a1a" }}>
+              {questions[forward].question}
+            </p>
+            <h4 style={{ backgroundColor: "#1a1a1a" }}>
+              {questions[forward].difficulty}
+            </h4>
           </div>
 
-          <div className="direc">
+          <div className="direc" style={{ backgroundColor: "#1a1a1a" }}>
             <button onClick={forwardQuestion}>Forward</button>
             <button onClick={startTimer} disabled={isRunning}>
               Start
@@ -165,8 +169,8 @@ const Programming = () => {
           </div>
         </div>
 
-        <div className="time">
-          <h4>{formatTime(timeLeft)}</h4>
+        <div className="time" style={{ backgroundColor: "#1a1a1a" }}>
+          <h4 style={{ backgroundColor: "#1a1a1a" }}>{formatTime(timeLeft)}</h4>
         </div>
       </div>
 

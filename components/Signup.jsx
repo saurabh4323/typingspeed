@@ -30,7 +30,7 @@ function Signup() {
   };
 
   return (
-    <div className="oo">
+    <div className="ooo">
       <div className="containerdd">
         <div className="box"></div>
         <div className="signup">

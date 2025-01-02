@@ -1,12 +1,10 @@
-.oo {
+.ooo {
+  /* margin: auto; */
   background-color: #000000;
   display: flex;
-
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
-  /* font-family: Arial, sans-serif;
-   */
+  font-family: Arial, sans-serif;
 }
 
 .containerdd {
@@ -23,18 +21,17 @@
   width: 450px;
   height: 550px;
   border-radius: 20px;
-  box-shadow: 0 0 30px 0px #2589ff,
-              0 0 40px 10px #b64aff, 
-              0 0 40px 10px #ff3c8e;
+  box-shadow: 0 0 10px 0px #2589ff, 0 0 10px 10px #b64aff, 0 0 10px 10px #ff3c8e;
 }
 
 .signup {
   position: absolute;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .signup h1 {
@@ -47,11 +44,12 @@
 .signup p {
   color: white;
   font-size: 18px;
+
   font-weight: 600;
 }
 .signup input {
   width: 300px;
-  height: 50px;
+  height: 20px;
   font-weight: 700;
   border-radius: 8px;
   border: none;
@@ -60,13 +58,15 @@
 
 .signup-button {
   height: 40px;
+
   width: 150px;
+  /* margin: auto; */
   font-size: 20px;
   background-color: #ff3c8e;
   border-radius: 10px;
   font-weight: bolder;
   text-transform: uppercase;
   cursor: pointer;
-  margin-left: 0px;
+  margin-left: 90px;
   margin-top: 20px;
 }
