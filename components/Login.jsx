@@ -1,20 +1,67 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./Login.css";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const route = useRouter();
+  const [login, setlogin] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    const response = await axios.post("/api/user/login", login);
+    console.log("Signup successful:", response.data);
+    const email = localStorage.setItem("email", login.email);
+    alert("Login successfully");
+    route.push("/game");
+  };
+  const onhandlechange = (e) => {
+    const { name, value } = e.target;
+    setlogin((prev) => ({ ...prev, [name]: value }));
+  };
   return (
     <div className="container-login">
       <div className="box-login"></div>
-      <div className="login">
+      <form className="login" onSubmit={handlesubmit}>
         <h1>Log In</h1>
         <div className="form-login">
           <p>Email</p>
-          <input type="text" placeholder="Email"></input>
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            onChange={onhandlechange}
+            value={login.email}
+          ></input>
           <p>Password</p>
-          <input type="password" placeholder="Password"></input>
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={onhandlechange}
+            name="password"
+            value={login.password}
+          ></input>
         </div>
-        <button className="login-button">Log In</button>
-      </div>
+        <button className="login-button" type="submit">
+          Log In
+        </button>
+        <p>
+          Don't have an account?{" "}
+          <span
+            style={{
+              color: "blue",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
+            Click here
+          </span>
+        </p>
+      </form>
     </div>
   );
 }

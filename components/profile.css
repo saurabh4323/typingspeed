@@ -1,0 +1,52 @@
+.profile-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.profile-table th {
+  background-color: #000000;
+  color: #d90303;
+}
+
+.profile-table td {
+  background-color: #1f1f1f;
+}
+
+.profile-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.profile-table td[colspan="3"] {
+  text-align: center;
+  color: #ff0000;
+  font-style: italic;
+}

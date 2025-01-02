@@ -2,8 +2,11 @@
 import React, { useState } from "react";
 import "./signup.css";
 import axios from "axios";
+// import { Router } from "express";
+import { useRouter } from "next/navigation";
 
 function Signup() {
+  const route = useRouter();
   const [signup, setSignup] = useState({
     name: "",
     email: "",
@@ -23,7 +26,9 @@ function Signup() {
     try {
       const response = await axios.post("api/user/signup", signup);
       console.log("Signup successful:", response.data);
+      const email = localStorage.setItem("email", signup.email);
       alert("signup successfully");
+      route.push("/game");
     } catch (error) {
       console.error("Signup failed:", error.response?.data || error.message);
     }
@@ -64,9 +69,29 @@ function Signup() {
               value={signup.password}
               onChange={handleChange}
             />
+
             <button className="signup-button" type="submit">
               Sign Up
             </button>
+            <p
+              style={{
+                fontSize: "17px",
+                fontWeight: "300",
+              }}
+            >
+              Already have an account?{" "}
+              <span
+                style={{
+                  fontSize: "17px",
+                  fontWeight: "300",
+                  color: "blue",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+              >
+                Click here
+              </span>
+            </p>
           </form>
         </div>
       </div>
