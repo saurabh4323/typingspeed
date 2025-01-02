@@ -37,7 +37,7 @@ function Signup() {
           <h1>Sign Up</h1>
           <form
             className="form"
-            style={{ gap: "6px", display: "flex", flexDirection: "column" }}
+            style={{ gap: "10px", display: "flex", flexDirection: "column" }}
             onSubmit={handleSubmit}
           >
             <p>Name</p>
