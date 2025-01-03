@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./home.css";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 export default function Home() {
   const [floatingLetters, setFloatingLetters] = useState([]);
@@ -104,7 +105,10 @@ export default function Home() {
           repeat={Infinity}
           style={{ color: "white", fontSize: "28px", textAlign: "center" }}
         />
-        <button className="start">Start Test</button>
+        <Link href={"/game"}>
+          {" "}
+          <button className="start">Start Test</button>
+        </Link>
         <div className="floating-letters">
           {floatingLetters.map((letter, index) => (
             <div
