@@ -87,7 +87,6 @@ export default function Home() {
   function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
   }
-
   return (
     <div className="container">
       <div className="center">
@@ -105,10 +104,7 @@ export default function Home() {
           repeat={Infinity}
           style={{ color: "white", fontSize: "28px", textAlign: "center" }}
         />
-        <Link href={"/game"}>
-          {" "}
-          <button className="start">Start Test</button>
-        </Link>
+
         <div className="floating-letters">
           {floatingLetters.map((letter, index) => (
             <div
@@ -139,6 +135,10 @@ export default function Home() {
           />
         </svg>
       </div>
+      <Link href={"/game"}>
+        {" "}
+        <button className="start">Start Test</button>
+      </Link>
     </div>
   );
 }
