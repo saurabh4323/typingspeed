@@ -18,9 +18,9 @@ const sentences = [
   "Learning new technologies opens up endless possibilities.",
 ];
 
-const TypingGame=()=>{
-  const [sentence,setSentence]= useState(' ');
-  const [input,setInput]= useState(' ');
+const  Game = () => {
+  const [sentence,setSentence]= useState('');
+  const [input,setInput]= useState('');
   const [score,setScore]=useState(0);
   const [time,setTime]=useState(60);
   const [isGameOver, setIsGameOver]=useState(false);
@@ -33,7 +33,7 @@ const TypingGame=()=>{
   },[isGameStarted]);
 
   useEffect(()=>{
-    if(time>0 && !isGameOver && isGameStarted){
+    if(time>0  && isGameStarted){
       const timer = setTimeout(()=>{
         setTime((prevTime)=>prevTime-1);
       },1000);
@@ -42,23 +42,72 @@ const TypingGame=()=>{
     else if(time===0 && isGameStarted){
       setIsGameOver(true);
     }
-  },[time, isGameOver, isGameStarted]);
+  },[time,  isGameStarted]);
 
   const startGame=()=>{
     generateRandomSentence();
     setTime(60);
-    setIsGameStarted(false);
+    setScore(0);
+    setInput("");
+    setIsGameStarted(true);
+    setIsGameOver(false);
+  };
+
+  const generateRandomSentence=()=>{
+    const randomIndex=Math.floor(Math.random()*sentences.length);
+    setSentence(sentences[randomIndex]);
+  };
+
+  const handleChange=(e)=>{
+    if(!isGameOver && isGameStarted){
+      setInput(e.target.value);
+      if(e.target.value===sentence){
+        setScore((prevScore)=>prevScore+1);
+        setInput('');
+        generateRandomSentence();
+      }
+    }
+  };
+
+  const handleStartGame=()=>{
+    setIsGameStarted(true);
   };
 
    
-}
 
-export default function Game() {
-  return <div className="container-game">
-    <h1 className="title">Sentence Typing Game</h1>
-    {! isGameStarted && (
-      <button onClick={handleStartGame} className="game-start">Start Game</button>
+
+
+  return (<div className="containerq">
+    <h1 className="titleq">Sentence Typing Game</h1>
+    { !isGameStarted && !isGameOver && (
+      <button onClick={handleStartGame} className="start-button">Start Game</button>
     )}
-    
-  </div>;
-}
+    {isGameStarted && !isGameOver &&  (
+      <>
+      <div className="timer">Time Left: {time}</div>
+      <div className="sentence">{sentence}</div>
+      
+        <div className="input-container">
+        <input 
+          type="text"
+          value={input}
+          onChange={handleChange}
+          className="input-field"
+          placeholder="Type here..."
+          autoFocus
+          disabled={isGameOver}
+        /> 
+        </div> 
+      
+      </>
+    )}
+    {isGameOver && (
+      <div className="game-over">
+        <p>Game Over!</p>
+        <p>Your Score: {score}</p>
+      </div>  
+    )}    
+  </div>
+  )}
+  export default Game;
+
