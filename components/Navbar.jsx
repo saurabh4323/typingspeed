@@ -1,8 +1,16 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [email, setemail] = useState(false);
+  useEffect(() => {
+    const user = localStorage.getItem("email");
+    if (user) {
+      setemail(true);
+    }
+  });
   return (
     <div>
       <div className="navbar">
@@ -22,7 +30,15 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="right">
-          <button>Log In</button>
+          {!email ? (
+            <Link href={"/login"}>
+              <button>Login</button>
+            </Link>
+          ) : (
+            <Link href={"/profile"}>
+              <button>Profile</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

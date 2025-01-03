@@ -4,9 +4,15 @@ import React, { useEffect, useState } from "react";
 import "./profile.css";
 
 export default function Profile() {
-  const [data, setdata] = useState([]);
+  const [data, setData] = useState([]);
+  const [email, setEmail] = useState(null);
 
-  const email = localStorage.getItem("email");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedEmail = localStorage.getItem("email");
+      setEmail(storedEmail);
+    }
+  }, []);
 
   useEffect(() => {
     if (email) {
@@ -16,8 +22,8 @@ export default function Profile() {
 
   const logindata = async () => {
     try {
-      const response = await axios.get(`api/user/profile/${email}`);
-      setdata(response.data);
+      const response = await axios.get(`/api/user/profile/${email}`);
+      setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
