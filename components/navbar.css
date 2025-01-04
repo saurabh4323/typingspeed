@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  /* margin-bottom: -40px; */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 15px 10px 16px 0px;
@@ -13,7 +13,7 @@
   font-family: "Roboto", sans-serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
-  width: 99%;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
@@ -27,18 +27,19 @@
 
 .navbar .middle {
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .navbar .middle button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: transparent;
   color: white;
   border: 2px solid #0099ff;
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .navbar .middle button:hover {
@@ -47,16 +48,28 @@
 }
 
 .navbar .right button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: #0099ff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .navbar .right button:hover {
   background-color: #0066cc;
+}
+@media (max-width: 768px) {
+  .navbar .middle button {
+    padding: 10px 15px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #0099ff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 10px;
+  }
 }

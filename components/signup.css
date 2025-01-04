@@ -18,7 +18,7 @@
 .box {
   position: absolute;
 
-  width: 450px;
+  width: 400px;
   height: 550px;
   border-radius: 20px;
   box-shadow: 0 0 10px 0px #2589ff, 0 0 10px 10px #b64aff, 0 0 10px 10px #ff3c8e;

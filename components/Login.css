@@ -14,7 +14,7 @@
   position: absolute;
   height: 70vh;
   gap: 20px;
-  width: 60vh;
+  width: 400px;
   box-shadow: 0 0 10px 0px #2589ff, 0 0 10px 10px #b64aff, 0 0 10px 0px #ff3c8e;
   border-radius: 20px;
 }

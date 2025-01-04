@@ -1,103 +1,129 @@
 .containerq {
-    margin-top: 200px;
-    margin-left: 200px;
-    border: 1px solid #ff0000;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 750px;
-    padding: 40px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    animation: fadeIn 1s ease-in-out;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ff0000;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 750px;
+  padding: 2px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.containerq:hover {
+  transform: scale(1.05);
+}
+
+.titleq {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.timer {
+  font-size: 1.5rem;
+  color: #0d6be6;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.sentence {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: #0f83f8;
+  line-height: 1.6;
+}
+
+.input-containerq {
+  margin-top: 20px;
+  position: relative;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #2ecc71;
+}
+
+.input-field:hover {
+  border-color: #2980b9;
+}
+
+.start-button {
+  background: #3498db;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 30px;
+}
+
+.start-button:hover {
+  background-color: #2980b9;
+}
+
+.game-over {
+  font-size: 1.5rem;
+  color: #08fe3d;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.game-over p {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .containerq:hover {
-    transform: scale(1.05);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+@media (max-width: 768px) {
+  .containerq {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+  }
+
   .titleq {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    font-size: 1.3rem;
   }
-  
+
   .timer {
-    font-size: 1.5rem;
-    color: #0d6be6;
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 1rem;
   }
-  
+
   .sentence {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    font-weight: 500;
-    color: #0f83f8;
-    line-height: 1.6;
+    font-size: 0.9rem;
   }
-  
-  .input-containerq {
-    margin-top: 20px;
-    position: relative;
-  }
-  
+
   .input-field {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.2rem;
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    outline: none;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
+    padding: 8px;
+    font-size: 0.9rem;
   }
-  
-  .input-field:focus {
-    border-color: #2ecc71;
-  }
-  
-  .input-field:hover {
-    border-color: #2980b9;
-  }
-  
-  .start-button {
-    background: #3498db;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 30px;
-  }
-  
-  .start-button:hover {
-    background-color: #2980b9;
-  }
-  
-  .game-over {
-    font-size: 1.5rem;
-    color: #08fe3d;
-    font-weight: 600;
-    margin-top: 30px;
-  }
-  
-  .game-over p {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+}
