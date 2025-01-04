@@ -4,6 +4,7 @@ import "./signup.css";
 import axios from "axios";
 // import { Router } from "express";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function Signup() {
   const route = useRouter();
@@ -80,6 +81,7 @@ function Signup() {
               }}
             >
               Already have an account?{" "}
+              <Link href={"/login"}>
               <span
                 style={{
                   fontSize: "17px",
@@ -88,9 +90,12 @@ function Signup() {
                   textDecoration: "underline",
                   cursor: "pointer",
                 }}
+                
               >
+                
                 Click here
               </span>
+              </Link>
             </p>
           </form>
         </div>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Login() {
   const route = useRouter();
@@ -51,6 +52,7 @@ export default function Login() {
         </button>
         <p>
           Don't have an account?{" "}
+          <Link href={"/signup"}>
           <span
             style={{
               color: "blue",
@@ -60,6 +62,7 @@ export default function Login() {
           >
             Click here
           </span>
+          </Link>
         </p>
       </form>
     </div>
